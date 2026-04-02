@@ -21,15 +21,15 @@ export function SpendingChart() {
             No expenses recorded.
           </div>
         ) : (
-          <div className="h-[300px] w-full">
+          <div className="h-[350px] w-full pb-2">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
                 <Pie
                   data={data}
                   cx="50%"
-                  cy="50%"
-                  innerRadius={80}
-                  outerRadius={110}
+                  cy="45%"
+                  innerRadius="50%"
+                  outerRadius="75%"
                   paddingAngle={5}
                   dataKey="value"
                   stroke="none"
@@ -52,7 +52,7 @@ export function SpendingChart() {
                   layout="horizontal" 
                   verticalAlign="bottom" 
                   align="center" 
-                  wrapperStyle={{ fontSize: "12px", paddingTop: "20px" }}
+                  wrapperStyle={{ fontSize: "12px", paddingTop: "10px" }}
                   iconSize={10} 
                   iconType="circle"
                 />
