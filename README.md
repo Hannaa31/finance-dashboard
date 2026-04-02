@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and interactive Personal Finance Dashboard built with React, TypeScript, and Tailwind CSS. This application allows users to monitor their financial health, visualize spending habits, and manage their transactions seamlessly.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[Link to Live Deployment](https://finance-dashboard-three-rho.vercel.app/) 
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project demonstrates strong frontend engineering skills, specifically in building robust user interfaces, managing complex states, and integrating data visualizations.
 
-## Expanding the ESLint configuration
+*   **Financial Overview:** Instant snapshot of Total Balance, Total Income, and Total Expenses with clean, metric-driven summary cards.
+*   **Data Visuzalition:** 
+    *   Interactive Line Chart for tracking balance over time.
+    *   Responsive Pie Chart for breaking down categorical spending (optimized for both desktop and mobile views).
+    *   Powered by `recharts`.
+*   **Transaction Management:**
+    *   Complete CRUD (Create, Read, Update, Delete) capability for transactions.
+    *   Smart filtering by type (Income vs. Expense) and a dynamic search bar.
+    *   Client-side pagination (Show default 6, load more on demand).
+*   **Role-Based Access Control (RBAC):** Simulated Admin and Viewer roles. Only Admins can modify data (Add, Edit, Delete), while Viewers have read-only access.
+*   **Persistent Storage:** Data is stored locally using the browser's `localStorage` to ensure persistence across page reloads.
+*   **Responsive & Polished UI:** Built with an emphasis on a premium user experience, featuring dark/light mode adaptable colors, glassmorphic hints, and full mobile reactivity.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+*   **Framework:** [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/) for strong typing and error reduction.
+*   **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) for rapid, utility-first styling and robust responsive design.
+*   **Charts:** [Recharts](https://recharts.org/) for declarative, responsive, and customizable SVG charts.
+*   **Icons:** [Lucide React](https://lucide.dev/) for crisp, consistent iconography.
+*   **State Management:** React Context API and Hooks (`useState`, `useEffect`).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🧠 Technical Highlights 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+*   **Component Architecture:** Code is broken down into small, reusable UI components (`Card`, `Button`, `Badge`, `Input`) separating presentational elements from business logic.
+*   **Custom Hooks & Context:** Uses a centralized `FinanceContext` to manage global state (transactions, user role), preventing prop drilling.
+*   **Data Transformation:** Implements utility functions to parse and format raw transaction data into structures digestible by charting libraries.
+*   **Mobile-First Adaptability:** specifically addressed responsive rendering issues (like optimizing charting radii and dynamic flex-box wrapping constraints) to ensure perfect usability on small devices.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 💻 Running the Project Locally
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+If you'd like to inspect the code and run it on your own machine:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/Hannaa31/finance-dashboard.git
+    cd finance-dashboard
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+3.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
+4. Open your browser and navigate to `http://localhost:5173`.
